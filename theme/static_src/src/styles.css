@@ -1,0 +1,18 @@
+#id_username, #id_password{
+    width: 100%;
+
+
+}
+
+#inp{
+    border: none;
+    outline: none !important
+}
+
+.grid-row-product{
+    grid-template-rows: 40% 60%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

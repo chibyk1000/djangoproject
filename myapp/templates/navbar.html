@@ -1,0 +1,14 @@
+<nav class="bg-green-800 text-white flex justify-between h-20 p-5 items-cente p">
+    <a href="" class="text-white font-bold text-4xl">DJstore</a>
+    <ul class="flex w-[60%] justify-between items-center text-[1.2rem]">
+        <li><a href="">Home</a></li>
+        <li><a href="">Sell on Djstore</a></li>
+        <form action="" class="bg-white flex w-[40%]">
+            <input type="text" placeholder="Search for a product" class="border-none focus:ring-0 focus:ring-offset-0 w-[92%] text-green-800" >
+     
+            <button class="bg-black px-3"><i class="fa-solid fa-magnifying-glass "></i></button>
+        </form>
+        <li><a href="">Contact us</a></li>
+        <li><a href="/cart"><i class="fa-solid fa-cart-shopping"></i> <span> {{request.session.cart|length}}</span></a></li>
+    </ul>
+</nav>

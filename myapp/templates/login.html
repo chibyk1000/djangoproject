@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Login page{% endblock  %}
+{% block content %}
+
+<div class="shadow-xl p-2 mt-10 w-1/2 mx-auto">
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1 class="text-3xl font-bold my-3">Create account</h1>
+        <p class="mb-3">Create your account to enjoy full features</p>
+{{form|crispy}}
+<div class="flex justify-end">
+
+    <button class="bg-[#0C4B33] text-white px-5 mt-3  py-2 ">Submit</button>
+</div>
+{% for message  in messages %}
+{% if message.tags == 'error' %}
+<p class="text-rose-700 text-center capitalize ">{{message}}</p>
+{% elif message.tags == 'success'%}
+<p class="text-green-700 text-center capitalize ">{{message}}</p>
+{% endif %}
+{% endfor %}
+
+    </form>
+</div>
+
+{% endblock  %}

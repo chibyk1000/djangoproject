@@ -1,0 +1,29 @@
+{% extends 'admin/admin-layout.html' %}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+    <div class="row justify-content-center pt-3">
+        <div class="col-md-7 shadow-md bg-white p-4">
+            <form style="width: 200px;" action="{% url 'upload-pics' %}" class="" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+<img src="{{url}}" alt="" width="200" height="200">
+<input type="file" name="file" class="my-2">
+<button class="btn btn-secondary ">upload</button>
+            </form>
+                        <h1 class="">Profile</h1>
+            <form action="" class="profilefrm" >
+                {% csrf_token %}
+                <input type="text" class="form-control mb-3" placeholder="First name" value="{{user.first_name}}" name="firstname">
+                <input type="text" class="form-control mb-3" placeholder="Last name" value="{{user.last_name}}" name="lastname">
+                <input type="text" class="form-control mb-3" placeholder="Username" value="{{user.username}}" name="username">
+                <input type="text" class="form-control mb-3" placeholder="Email" value="{{user.email}}" name="email">
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-primary">update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock  %}
